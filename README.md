@@ -93,4 +93,4 @@ nslookup #loadbalancer url
 ae2f0d440673245d8b39b847e84ae715-495559001.us-east-2.elb.amazonaws.com
 ```
 
-## Liscence (forchu.cha@gmail.com)
+## Liscence ([forchu.cha@gmail.com](https://www.linkedin.com/in/prince-chafah-forchu-sani-691534158/)https://www.linkedin.com/in/prince-chafah-forchu-sani-691534158/)
