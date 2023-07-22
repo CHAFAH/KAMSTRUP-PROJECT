@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shoe Marketplace - Products</title>
+    <!-- Add your CSS stylesheets and scripts here -->
+    <!-- For example: -->
+    <!-- <link rel="stylesheet" th:href="@{/css/styles.css}" /> -->
+    <!-- <script th:src="@{/js/scripts.js}"></script> -->
+</head>
+<body>
+    <h1>Welcome to Shoe Marketplace</h1>
+    
+    <h2>Available Products</h2>
+    
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+        
+        <!-- Use Thymeleaf expressions to iterate over the list of products -->
+        <tr th:each="product : ${products}">
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.description}"></td>
+            <td th:text="${product.price}"></td>
+            <td>
+                <form method="POST" action="/place-order">
+                    <input type="hidden" name="productId" th:value="${product.id}" />
+                    <button type="submit">Place Order</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+    
+    <!-- Add other content as needed -->
+</body>
+</html>

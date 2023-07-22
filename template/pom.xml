@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>marketplace</artifactId>
+    <version>1.0.0</version>
+  
+    <properties>
+        <java.version>11</java.version>
+        <spring-boot.version>2.5.2</spring-boot.version>
+        <spring-data-mongodb.version>3.2.5</spring-data-mongodb.version>
+        <spring-boot-starter-security.version>2.5.2</spring-boot-starter-security.version>
+        <sonar.host.url>http://localhost:9000</sonar.host.url>
+        <nexus.url>http://nexus.example.com/repository/maven-releases</nexus.url>
+        <nexus.snapshot.url>http://nexus.example.com/repository/maven-snapshots</nexus.snapshot.url>
+    </properties>
+  
+    <dependencies>
+        <!-- Spring Boot dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+  
+        <!-- MongoDB dependency -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            <version>${spring-data-mongodb.version}</version>
+        </dependency>
+  
+        <!-- Spring Security dependency -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <version>${spring-boot-starter-security.version}</version>
+        </dependency>
+  
+        <!-- Add other dependencies as required -->
+    </dependencies>
+  
+    <build>
+        <plugins>
+            <!-- Spring Boot Maven plugin -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+            </plugin>
+  
+            <!-- SonarQube Maven plugin -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.9.1.2184</version>
+            </plugin>
+        </plugins>
+    </build>
+  
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <url>${nexus.url}</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>${nexus.snapshot.url}</url>
+        </snapshotRepository>
+    </distributionManagement>
+  
+</project>
+
+
