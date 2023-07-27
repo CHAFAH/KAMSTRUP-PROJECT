@@ -11,7 +11,7 @@
 + It can communicate with the application and not the database.
 + It is self-managed by the EKS
 
-## BanckEnd
+## BackEnd
 + The backend of the application is the springboot Mongo App
 + It is designed to collect user input
 + The application is linked to the Mongodb and can write data into the database
