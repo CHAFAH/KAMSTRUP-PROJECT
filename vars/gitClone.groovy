@@ -1,3 +1,3 @@
 def call() {
-    checkout scm
+    sh 'Hello World'
 }
